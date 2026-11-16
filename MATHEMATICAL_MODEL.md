@@ -10,13 +10,13 @@ interpretation boundary.
 
 ---
 
-## 4. Proposed architecture
+## 1. Proposed architecture
 
 The initial proposed pipeline is:
 
 **Input → Coordinate encoding → Candidate-state retrieval → Complex amplitude assignment → Interference-based decision → Feedback → Coordinate and phase updates → Persistent state memory**
 
-### 4.1 Coordinate state space
+### 1.1 Coordinate state space
 
 Let the system contain internal states:
 
@@ -49,7 +49,7 @@ $$
 
 The initial prototype may use a fixed input encoder or simple hand-designed features. A learned encoder should be treated as a separate experimental component because it could introduce conventional neural-network learning and obscure what Q-CIS itself contributes.
 
-### 4.2 Complex-valued amplitudes and phases
+### 1.2 Complex-valued amplitudes and phases
 
 Associate each candidate state with a complex amplitude:
 
@@ -82,7 +82,7 @@ The phase $\phi_i$ is an additional trainable or state-dependent quantity. Its i
 
 This construction is a quantum-inspired mathematical representation. It does not by itself create a physical quantum state or quantum computational advantage.
 
-### 4.3 Interference-based decision
+### 1.3 Interference-based decision
 
 Suppose each internal state contributes to a candidate class or answer $c$. Let $I_c$ be the indices of states associated with that candidate.
 
@@ -108,7 +108,7 @@ Because amplitudes are added before their squared magnitudes are calculated, pha
 
 Important implementation issue: if states are grouped by class, the grouping must be learned or defined without leaking test labels. The system also needs a principled way to handle multiple, overlapping, or context-dependent relationships.
 
-### 4.4 Coordinate-based learning
+### 1.4 Coordinate-based learning
 
 A general optimization form for a contributing state is:
 
@@ -129,7 +129,7 @@ An interpretable prototype may also test attraction and repulsion rules:
 
 This resembles existing prototype learning, metric learning, and learning vector quantisation. The experimental contribution must therefore lie in the complete learning rule and its measured behaviour, not in attraction or repulsion alone.
 
-### 4.5 Phase-based learning
+### 1.5 Phase-based learning
 
 The phase can be updated using a loss gradient:
 
@@ -143,7 +143,7 @@ The phase update should be wrapped modulo $2\pi$, and numerical stability must b
 
 The hypothesis is that phase updates can improve the way competing candidate states combine. This is not guaranteed. The system must be tested against an otherwise identical model with phases fixed, randomized, or removed.
 
-### 4.6 Combined learning cycle
+### 1.6 Combined learning cycle
 
 The proposed training cycle is:
 
@@ -160,7 +160,7 @@ The proposed training cycle is:
 
 Correct predictions should not automatically be reinforced without qualification. Updates should depend on loss, confidence, evidence quality, and contradictory examples. Otherwise, the system may become overconfident or reinforce incorrect labels.
 
-## 13. Later classifier formulation
+## 2. Later classifier formulation
 
 The later experimental classifier uses a learned input coordinate representation $q(x)\in\mathbb{R}^d$ and learned state coordinates $s_i\in\mathbb{R}^d$.
 
@@ -203,7 +203,7 @@ $$
 
 The first term is the sum of individual magnitude contributions. The second term contains pairwise phase-dependent interactions.
 
-### 13.1 Real-valued equivalent
+### 2.1 Real-valued equivalent
 
 The same class score can be computed without complex arithmetic:
 
@@ -215,7 +215,7 @@ $$
 
 The reported real-valued and complex implementations matched to approximately $2.2\times10^{-16}$ in the tested implementation. The real-valued version was reported to be about 3% faster in the Phase 4 comparison. Complex arithmetic is not essential to compute this score.
 
-### 13.2 Interpretation boundary
+### 2.2 Interpretation boundary
 
 This is a classical normalized squared-modulus RBF-style expansion / rank-one quadratic readout. The use of complex notation does not establish physical quantum superposition, entanglement, or quantum advantage. The method's ingredients overlap with established areas including embeddings, metric learning, RBF methods, prototype learning, and complex-valued models.
 
@@ -223,7 +223,7 @@ No claim of a new computational primitive is made.
 
 ---
 
-## 5. Existing equivalents and related research
+## 3. Existing equivalents and related research
 
 The individual ingredients have substantial precedents. Relevant overlap includes:
 

@@ -3,23 +3,23 @@
 The experimental plan from the original proposal, the v0.1 prototype specification, the
 development roadmap, and the protocol behind the reported phases.
 
-> **Status note.** Sections 7–10 describe the *planned* protocol and prototype target. The
+> **Status note.** Sections 1–3 describe the *planned* protocol and prototype target. The
 > reported Phase 1–7 runs followed this design, but the full configurations, code, and raw data
 > are not included in this release, so the protocol cannot be re-executed from these documents
 > alone.
 
 ---
 
-## 7. Experimental plan in the original proposal
+## 1. Experimental plan in the original proposal
 
-### 7.1 Initial datasets
+### 1.1 Initial datasets
 1. XOR — tests nonlinear separability.
 2. Concentric circles — tests curved decision boundaries.
 3. Overlapping clusters — tests ambiguity and competing interpretations.
 
 Use fixed random seeds and documented train, validation, and test splits. Do not tune on the test set.
 
-### 7.2 Comparison models
+### 1.2 Comparison models
 1. Nearest-centroid classifier.
 2. Radial Basis Function classifier.
 3. Learning Vector Quantisation or another prototype-learning baseline.
@@ -28,7 +28,7 @@ Use fixed random seeds and documented train, validation, and test splits. Do not
 
 Baselines should receive comparable tuning effort and appropriate capacity. Report parameter counts or state counts and computational costs.
 
-### 7.3 Ablation studies
+### 1.3 Ablation studies
 
 | Version | Components |
 |---|---|
@@ -41,7 +41,7 @@ Baselines should receive comparable tuning effort and appropriate capacity. Repo
 
 These tests identify whether each proposed mechanism contributes anything measurable.
 
-### 7.4 Metrics
+### 1.4 Metrics
 Record:
 - Accuracy and macro-F1 where appropriate.
 - Cross-entropy or another suitable loss.
@@ -55,7 +55,7 @@ Record:
 
 Do not select only the metric on which Q-CIS performs best. Report all predeclared metrics.
 
-## 9. Original first-prototype specification: Q-CIS v0.1
+## 2. Original first-prototype specification: Q-CIS v0.1
 
 | Component | Initial target |
 |---|---|
@@ -98,7 +98,7 @@ project-qi/
 └── results/
 ```
 
-## 10. Original development roadmap
+## 3. Original development roadmap
 
 ### Stage 1 — Formal specification
 Define input encoder, state initialization, candidate retrieval, amplitude and phase calculations, decision rule, coordinate and phase losses; check normalization and numerical stability.

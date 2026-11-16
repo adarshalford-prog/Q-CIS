@@ -1,16 +1,29 @@
 cff-version: 1.2.0
-message: "If you refer to this work, please cite it using the metadata below."
-title: "Q-CIS — Quantum Coordinate Intelligence System"
+message: >-
+  If you refer to this work, please cite it using the metadata below.
+title: "Q-CIS: a classical coordinate-and-phase classifier (public research release)"
 abstract: >-
-  A classical, quantum-inspired learning architecture based on coordinate-based state
-  evolution, complex-valued amplitudes and phases, and interference-based decisions.
-  This is a partial public research release: documentation and author-reported findings only.
-  No quantum advantage or physical quantum computation is claimed.
+  Q-CIS is a classical, quantum-inspired learning architecture that represents
+  information as coordinates in a state space, assigns each internal state a
+  complex-valued amplitude and phase, and decides by the squared modulus of the
+  summed amplitudes within each class. The class score is a normalised
+  squared-modulus RBF-style expansion with an exact real-valued sine/cosine
+  equivalent; complex arithmetic is not required to compute it. No quantum
+  computer, physical quantum state, entanglement, or quantum advantage is
+  involved or claimed.
+
+  This release contains research documentation, a reference implementation of
+  the published equations, deterministic synthetic dataset generators, tests,
+  and a reproduction workflow. It does NOT contain the original experiment code,
+  raw fit-level data, or the configurations behind the Phase 1-7 figures reported
+  in the documentation, so those figures remain author-reported and are not
+  independently reproduced here. The reference implementation reproduces the
+  published mathematics, not the historical results.
 type: software
 authors:
   - name: "Adarsh K. B."
     email: "adarsh.alford@gmail.com"
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-11-16
 license: MIT
 repository-code: "https://github.com/adarshalford-prog/Q-CIS"
@@ -19,4 +32,6 @@ keywords:
   - prototype learning
   - complex-valued models
   - phase interference
+  - radial basis function
   - classical simulation
+  - reproducibility

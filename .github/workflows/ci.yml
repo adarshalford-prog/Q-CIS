@@ -1,0 +1,113 @@
+name: CI
+
+# SCOPE OF THIS WORKFLOW — read before assuming it validates the research.
+#
+# These are SMOKE TESTS. They check that the package imports, that the published
+# mathematics behaves as documented, that the gradients are correct, that no test
+# data leaks into feature construction, and that the command-line entry points run
+# end to end on a tiny configuration.
+#
+# They are NOT a reproduction of the research. The full benchmark
+# (`python scripts/run_reproduction.py --all`) takes minutes and is run by a human,
+# not here. Nothing in this workflow reproduces the historical Phase 1-7 figures,
+# which cannot be reproduced from this repository at all.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Tests and smoke benchmark (not a full reproduction)
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Show versions
+        run: |
+          python --version
+          python -c "import numpy; print('numpy', numpy.__version__)"
+          python -c "import pytest; print('pytest', pytest.__version__)"
+
+      - name: Unit tests (mathematics, gradients, leakage, commands)
+        env:
+          PYTHONPATH: src:.
+        run: python -m pytest -q
+
+      - name: Smoke benchmark on a tiny configuration
+        env:
+          PYTHONPATH: src:.
+        run: |
+          python experiments/run_benchmark.py \
+            --config experiments/configs/default.json \
+            --out /tmp/smoke.csv \
+            --force \
+            --quiet
+          echo "rows: $(( $(wc -l < /tmp/smoke.csv) - 1 ))"
+          python analysis/audit.py --fits /tmp/smoke.csv --outdir /tmp/smoke_summaries --n-boot 200
+
+      - name: Package imports cleanly
+        env:
+          PYTHONPATH: src:.
+        run: |
+          python -c "import qcis; print('qcis', qcis.__version__)"
+          python -c "from qcis import QCISClassifier, MECHANISMS; print(MECHANISMS)"
+
+  docs:
+    name: Documentation link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check relative Markdown links resolve
+        run: |
+          python - <<'PY'
+          import os, re, sys
+          root = os.getcwd()
+          bad = []
+          for dirpath, _, files in os.walk(root):
+              if ".git" in dirpath:
+                  continue
+              for f in files:
+                  if not f.endswith(".md"):
+                      continue
+                  path = os.path.join(dirpath, f)
+                  text = open(path, encoding="utf-8").read()
+                  for target in re.findall(r"\]\(([^)]+)\)", text):
+                      if target.startswith(("http://", "https://", "#", "mailto:")):
+                          continue
+                      clean = target.split("#")[0]
+                      if not clean:
+                          continue
+                      resolved = os.path.normpath(os.path.join(dirpath, clean))
+                      if not os.path.exists(resolved):
+                          bad.append(f"{os.path.relpath(path, root)} -> {target}")
+          if bad:
+              print("Broken relative links:")
+              for b in bad:
+                  print("  " + b)
+              sys.exit(1)
+          print("all relative links resolve")
+          PY
+
+      - name: Check committed reference output is present
+        run: |
+          test -f results/reference/reference_fits.csv
+          echo "reference output present ($(wc -l < results/reference/reference_fits.csv) lines)"

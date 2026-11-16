@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+# Generated outputs from a reproduction run (kept out of version control;
+# the committed reference outputs live in results/reference/)
+results/raw/*
