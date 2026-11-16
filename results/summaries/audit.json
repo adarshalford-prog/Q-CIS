@@ -1,0 +1,262 @@
+{
+  "n_fits": 176,
+  "n_families": 8,
+  "families": [
+    "blobs",
+    "circles",
+    "moons",
+    "overlapping_clusters",
+    "rings",
+    "shells",
+    "spirals",
+    "xor"
+  ],
+  "mechanisms": [
+    "baseline_nearest_centroid",
+    "baseline_rbf_ridge",
+    "coords_only",
+    "fixed_phase",
+    "incoherent",
+    "trained_phase"
+  ],
+  "family_level_means": {
+    "blobs": {
+      "baseline_nearest_centroid": 1.0,
+      "baseline_rbf_ridge": 1.0,
+      "coords_only": 1.0,
+      "fixed_phase": 1.0,
+      "incoherent": 1.0,
+      "trained_phase": 1.0
+    },
+    "circles": {
+      "baseline_nearest_centroid": 0.5083,
+      "baseline_rbf_ridge": 1.0,
+      "coords_only": 1.0,
+      "fixed_phase": 1.0,
+      "incoherent": 1.0,
+      "trained_phase": 1.0
+    },
+    "moons": {
+      "baseline_nearest_centroid": 0.7917,
+      "baseline_rbf_ridge": 0.9833,
+      "coords_only": 0.9733,
+      "fixed_phase": 0.9817,
+      "incoherent": 0.9817,
+      "trained_phase": 0.9833
+    },
+    "overlapping_clusters": {
+      "baseline_nearest_centroid": 0.7583,
+      "baseline_rbf_ridge": 0.725,
+      "coords_only": 0.7233,
+      "fixed_phase": 0.7167,
+      "incoherent": 0.7083,
+      "trained_phase": 0.715
+    },
+    "rings": {
+      "baseline_nearest_centroid": 0.4833,
+      "baseline_rbf_ridge": 0.825,
+      "coords_only": 0.8167,
+      "fixed_phase": 0.81,
+      "incoherent": 0.7933,
+      "trained_phase": 0.7617
+    },
+    "shells": {
+      "baseline_nearest_centroid": 0.5417,
+      "baseline_rbf_ridge": 0.9167,
+      "coords_only": 0.6133,
+      "fixed_phase": 0.6417,
+      "incoherent": 0.63,
+      "trained_phase": 0.6517
+    },
+    "spirals": {
+      "baseline_nearest_centroid": 0.7417,
+      "baseline_rbf_ridge": 0.8333,
+      "coords_only": 0.905,
+      "fixed_phase": 0.8967,
+      "incoherent": 0.9133,
+      "trained_phase": 0.8883
+    },
+    "xor": {
+      "baseline_nearest_centroid": 0.4,
+      "baseline_rbf_ridge": 1.0,
+      "coords_only": 1.0,
+      "fixed_phase": 1.0,
+      "incoherent": 1.0,
+      "trained_phase": 1.0
+    }
+  },
+  "overall_means": {
+    "baseline_nearest_centroid": 0.6531,
+    "baseline_rbf_ridge": 0.9104,
+    "coords_only": 0.879,
+    "fixed_phase": 0.8808,
+    "incoherent": 0.8783,
+    "trained_phase": 0.875
+  },
+  "unit": "dataset family (seeds averaged within family)",
+  "n_independent_units": 8,
+  "contrasts": [
+    {
+      "mean": -0.003333333333333341,
+      "ci_low": -0.014791666666666661,
+      "ci_high": 0.00708333333333333,
+      "n": 8,
+      "n_boot": 10000,
+      "alpha": 0.05,
+      "p_value": 0.5804,
+      "contrast": "trained_phase - incoherent",
+      "mean_pp": -0.333,
+      "ci_low_pp": -1.479,
+      "ci_high_pp": 0.708,
+      "p_holm": 1.0,
+      "distinguishable_from_zero": false
+    },
+    {
+      "mean": -0.0039583333333333415,
+      "ci_low": -0.021458333333333315,
+      "ci_high": 0.012291666666666631,
+      "n": 8,
+      "n_boot": 10000,
+      "alpha": 0.05,
+      "p_value": 0.6658,
+      "contrast": "trained_phase - coords_only",
+      "mean_pp": -0.396,
+      "ci_low_pp": -2.146,
+      "ci_high_pp": 1.229,
+      "p_holm": 1.0,
+      "distinguishable_from_zero": false
+    },
+    {
+      "mean": -0.005833333333333343,
+      "ci_low": -0.018958333333333313,
+      "ci_high": 0.0027083333333333126,
+      "n": 8,
+      "n_boot": 10000,
+      "alpha": 0.05,
+      "p_value": 0.3876,
+      "contrast": "trained_phase - fixed_phase",
+      "mean_pp": -0.583,
+      "ci_low_pp": -1.896,
+      "ci_high_pp": 0.271,
+      "p_holm": 1.0,
+      "distinguishable_from_zero": false
+    },
+    {
+      "mean": -0.0006250000000000006,
+      "ci_low": -0.009375000000000008,
+      "ci_high": 0.0072916666666666685,
+      "n": 8,
+      "n_boot": 10000,
+      "alpha": 0.05,
+      "p_value": 0.9542,
+      "contrast": "incoherent - coords_only",
+      "mean_pp": -0.063,
+      "ci_low_pp": -0.938,
+      "ci_high_pp": 0.729,
+      "p_holm": 1.0,
+      "distinguishable_from_zero": false
+    },
+    {
+      "mean": -0.03541666666666665,
+      "ci_low": -0.10833333333333331,
+      "ci_high": 0.01270833333333335,
+      "n": 8,
+      "n_boot": 10000,
+      "alpha": 0.05,
+      "p_value": 0.2584,
+      "contrast": "trained_phase - baseline_rbf_ridge",
+      "mean_pp": -3.542,
+      "ci_low_pp": -10.833,
+      "ci_high_pp": 1.271,
+      "p_holm": 1.0,
+      "distinguishable_from_zero": false
+    },
+    {
+      "mean": 0.221875,
+      "ci_low": 0.08270833333333337,
+      "ci_high": 0.371671875,
+      "n": 8,
+      "n_boot": 10000,
+      "alpha": 0.05,
+      "p_value": 0.0006,
+      "contrast": "trained_phase - baseline_nearest_centroid",
+      "mean_pp": 22.188,
+      "ci_low_pp": 8.271,
+      "ci_high_pp": 37.167,
+      "p_holm": 0.0036,
+      "distinguishable_from_zero": true
+    }
+  ],
+  "geometry_gap_vs_phase_benefit": {
+    "spearman_rho": 0.0238,
+    "n_families": 8,
+    "note": "Descriptive only. With this many families an asymptotic p-value would be misleading; the historical audit's central correction was exactly that the family, not the fit, is the unit of inference.",
+    "per_family": {
+      "blobs": {
+        "cv_gap": 0.0179,
+        "phase_benefit_pp": 0.0
+      },
+      "circles": {
+        "cv_gap": 0.4679,
+        "phase_benefit_pp": 0.0
+      },
+      "moons": {
+        "cv_gap": 0.15,
+        "phase_benefit_pp": 0.167
+      },
+      "overlapping_clusters": {
+        "cv_gap": 0.0071,
+        "phase_benefit_pp": 0.667
+      },
+      "rings": {
+        "cv_gap": 0.2714,
+        "phase_benefit_pp": -3.167
+      },
+      "shells": {
+        "cv_gap": 0.2929,
+        "phase_benefit_pp": 2.167
+      },
+      "spirals": {
+        "cv_gap": 0.0321,
+        "phase_benefit_pp": -2.5
+      },
+      "xor": {
+        "cv_gap": 0.4571,
+        "phase_benefit_pp": 0.0
+      }
+    }
+  },
+  "frozen_selectors": {
+    "D1": {
+      "correct": 3,
+      "comparable_families": 5,
+      "accuracy": 0.6,
+      "choices": {
+        "blobs": "incoherent",
+        "circles": "trained_phase",
+        "moons": "trained_phase",
+        "overlapping_clusters": "incoherent",
+        "rings": "trained_phase",
+        "shells": "trained_phase",
+        "spirals": "incoherent",
+        "xor": "trained_phase"
+      }
+    },
+    "D2": {
+      "correct": 3,
+      "comparable_families": 5,
+      "accuracy": 0.6,
+      "choices": {
+        "blobs": "trained_phase",
+        "circles": "trained_phase",
+        "moons": "trained_phase",
+        "overlapping_clusters": "trained_phase",
+        "rings": "trained_phase",
+        "shells": "trained_phase",
+        "spirals": "trained_phase",
+        "xor": "trained_phase"
+      }
+    }
+  },
+  "frozen_selectors_note": "D1 and D2 are the two frozen formulas whose constants are published. D3 is not implemented because its threshold and corrected polarity are not recorded in the published material. These numbers exercise the selector mechanism on newly generated data; they do not reproduce the historical selector results."
+}
