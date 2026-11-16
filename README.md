@@ -20,7 +20,7 @@ Q-CIS is a **classical** algorithm. "Quantum-inspired" describes a mathematical 
 No quantum computer, physical quantum state, entanglement, or quantum advantage is claimed.
 
 A full literature review is required before any novelty claim is made. The individual ingredients
-of the method have substantial prior art (see [MATHEMATICAL_MODEL.md](MATHEMATICAL_MODEL.md#relationship-to-existing-methods)).
+of the method have substantial prior art (see [MATHEMATICAL_MODEL.md](MATHEMATICAL_MODEL.md#5-existing-equivalents-and-related-research)).
 
 ---
 
