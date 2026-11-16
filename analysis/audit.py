@@ -241,7 +241,7 @@ def main(argv=None):
         f.write(md)
 
     with open(os.path.join(args.outdir, "summary.csv"), "w", newline="", encoding="utf-8") as f:
-        w = csv.writer(f)
+        w = csv.writer(f, lineterminator="\n")
         w.writerow(["family"] + res["mechanisms"])
         for fam in res["families"]:
             w.writerow([fam] + [f"{res['family_level_means'][fam].get(m, ''):.6f}"

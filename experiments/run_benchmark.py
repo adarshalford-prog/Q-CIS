@@ -107,7 +107,7 @@ def run(config, out_path, force=False, quiet=False):
 
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     with open(out_path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=FIELDS)
+        w = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n")
         w.writeheader()
         for r in rows:
             w.writerow({k: r[k] for k in FIELDS})
