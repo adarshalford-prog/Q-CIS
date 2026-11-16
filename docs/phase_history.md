@@ -7,7 +7,7 @@
 
 ---
 
-## 14. Phase 1 — Initial prototype, ablations, and corrections
+## 1. Phase 1 — Initial prototype, ablations, and corrections
 
 The initial prototype evaluated synthetic datasets including XOR, circles, overlapping clusters, and spirals. It compared coordinate-only and phase-based variants and conventional baselines.
 
@@ -32,7 +32,7 @@ Study 2 contained 1,120 fits. Fixed versus trained phase was reported as +0.14 p
 
 **Interpretation:** Phase encoding may help on selected tasks, but a general benefit from training phases was not established.
 
-## 15. Phase 3 — Independent reproduction and falsification
+## 2. Phase 3 — Independent reproduction and falsification
 
 Reported findings:
 - Independent reproduction: 36/36 model-dataset cells bit-for-bit identical.
@@ -49,7 +49,7 @@ Reported findings:
 
 **Interpretation:** No demonstrated practical advantage; the model behaved like a kernel/random-feature-style classifier rather than a demonstrated new primitive.
 
-## 16. Phase 4 — Mechanism and stability
+## 3. Phase 4 — Mechanism and stability
 
 Reported findings:
 - Real-valued equivalent matched complex implementation to approximately $2.2\times10^{-16}$ and was about 3% faster.
@@ -63,7 +63,7 @@ Reported findings:
 
 **Interpretation:** Effects were dataset-specific, with instability in some conditions. The quantum-inspired framing was not necessary for the numerical implementation.
 
-## 17. Phase 5 — Geometry and selection
+## 4. Phase 5 — Geometry and selection
 
 Reported findings:
 - Three frozen formulas were derived from 32 parameterisations; formulas were saved with SHA-256 hashes.
@@ -78,7 +78,7 @@ Reported findings:
 
 **Interpretation:** A geometry association was observed, but the first selection rule did not generalize adequately. The training-accuracy linear-separability feature was problematic.
 
-## 18. Phase 6 — Independent geometry validation
+## 5. Phase 6 — Independent geometry validation
 
 Reported findings:
 - Phase 5 artifacts and frozen formulas were confirmed before new data.
@@ -94,7 +94,7 @@ Reported findings:
 
 **Interpretation:** The geometry-gap relationship replicated in this bank, and the frozen selector classified mechanism choice well on this evaluation. However, Q-CIS remained behind conventional baselines overall.
 
-## 19. Phase 7 — Cross-validated geometry prediction
+## 6. Phase 7 — Cross-validated geometry prediction
 
 Reported design:
 - Corrected features were computed on 56 existing datasets (Phases 5–6) as development data.
