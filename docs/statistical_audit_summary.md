@@ -7,7 +7,7 @@ The audit of the Phase 7 results and the corrected inference.
 
 ---
 
-## 20. Phase 7 statistical audit — corrected inference
+## 1. Phase 7 statistical audit — corrected inference
 
 The audit reported:
 - All 8 integrity checks passed.
