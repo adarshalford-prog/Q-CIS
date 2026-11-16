@@ -1,0 +1,24 @@
+{
+  "release": "Q-CIS reference implementation 0.2.0",
+  "note": "This configuration drives scripts/run_reproduction.py. It reproduces THIS release's reference implementation on freshly generated synthetic families. It does not reproduce the historical Phase 1-7 numbers, whose code, data and configurations were never published.",
+  "base_seed": 20261116,
+  "families": ["xor", "circles", "overlapping_clusters", "spirals", "moons", "rings", "shells", "blobs"],
+  "mechanisms": ["coords_only", "incoherent", "fixed_phase", "trained_phase"],
+  "seeds": [0, 1, 2, 3, 4],
+  "model": {
+    "n_states_per_class": 8,
+    "dim": 4,
+    "epochs": 200,
+    "lr": 0.05
+  },
+  "split": {
+    "test_frac": 0.3
+  },
+  "cv": {
+    "n_splits": 5
+  },
+  "statistics": {
+    "n_boot": 10000
+  },
+  "baselines": ["nearest_centroid", "rbf_ridge"]
+}
