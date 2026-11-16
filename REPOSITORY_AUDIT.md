@@ -20,7 +20,7 @@ Twelve tracked files, all prose or metadata. **No executable file of any kind.**
 |---|---|---|
 | `README.md` | docs | Overview and partial-release statement |
 | `LICENSE` | metadata | MIT, but the copyright line carried an inconsistent attribution string |
-| `CITATION.cff` | metadata | Described the project as `type: software` |
+| `CITATION.cff` | metadata | Declared `type: software` although the repository contained no software |
 | `RESEARCH_SUMMARY.md` | docs | Motivation, questions, interpretation |
 | `MATHEMATICAL_MODEL.md` | docs | The equations |
 | `METHODOLOGY.md` | docs | Protocol and prototype spec |
@@ -129,7 +129,7 @@ the historical record.
 | Phase 7 selector accuracy | The record contains an unresolved aside ("Selector was 83.88%? The original record reports selector 84.44%...") | Preserved verbatim in `docs/phase_history.md`; the audit figure of 84.44% is used in `RESULTS_SUMMARY.md` |
 | `linear_sep` feature | A known defect: it used training accuracy and overfit at high dimension, and was not fixed after the held-out results in that phase | Preserved and reported as a limitation |
 | Licence copyright line | Carried an inconsistent attribution string | **Corrected** to "Adarsh K. B." per the required public attribution; the superseded string is not reproduced here |
-| `CITATION.cff` type | Described the project as `type: software` when no software existed | **Corrected** to describe a documentation release with a reference implementation, explicitly not a complete software package |
+| `CITATION.cff` type | Declared `type: software` while the repository contained only documentation | **Kept as `software`, and now accurate.** The CFF 1.2.0 schema restricts `type` to `software` or `dataset`, so there is no documentation-only value to switch to and inventing one would make the file invalid. The release now does ship executable code, so `software` is the correct value; the `abstract` states explicitly that this is a reference implementation of the published equations, not the original research code, and not a complete software package |
 | Section numbering | Each document carried the dossier's original numbering (e.g. `## 21.`), so standalone documents started at arbitrary numbers | **Corrected**: each standalone document now numbers from 1 |
 | `docs/release_dossier.md` | — | **Deliberately not renumbered**: it is the archived provenance record and keeps the original 0–26 numbering, with a header saying so |
 
