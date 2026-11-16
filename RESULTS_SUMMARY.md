@@ -31,7 +31,7 @@ Headline results across Phases 1–7, with the corrected Phase 7 statistical aud
 
 ## Consolidated interpretation
 
-## 21. What the evidence supports
+## 1. What the evidence supports
 
 The reported experiments support cautious statements that:
 - A classical coordinate-and-phase classifier was implemented and tested on multiple synthetic dataset families.
@@ -42,7 +42,7 @@ The reported experiments support cautious statements that:
 - The corrected Phase 7 evidence does not establish a reliable practical gain over always-coherent phases.
 - Q-CIS did not demonstrate consistent superiority over conventional RBF, SVM, or MLP baselines.
 
-## 22. What the evidence does not support
+## 2. What the evidence does not support
 
 Do not claim:
 - Quantum advantage or physical quantum computation.

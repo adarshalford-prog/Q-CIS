@@ -50,7 +50,7 @@ Specify and test a coordinate-based, phase-sensitive learning architecture that 
 - Test whether phase and interference add value beyond coordinates alone.
 - Investigate how the architecture might later support structured memory and reasoning.
 
-## 6. Research questions and hypotheses
+## 4. Research questions and hypotheses
 
 ### RQ1 — Positional learning
 Can coordinate-based state evolution learn useful representations without relying on conventional neural-network layers?
@@ -69,7 +69,7 @@ Does joint coordinate and phase adaptation provide benefits over either mechanis
 
 These hypotheses are falsifiable. A negative result is useful research evidence.
 
-## 11. What Q-CIS is not
+## 5. What Q-CIS is not
 
 Q-CIS v0.1 is not:
 - A general-purpose AI.
@@ -81,7 +81,7 @@ Q-CIS v0.1 is not:
 
 These are possible future research directions, not current capabilities.
 
-## 12. Success criteria
+## 6. Success criteria
 
 The first research stage succeeds if it produces:
 1. A mathematically unambiguous architecture.
@@ -95,7 +95,7 @@ A performance claim requires evidence across suitable tasks and repeated experim
 
 ---
 
-## 21. What the evidence supports
+## 7. What the evidence supports
 
 The reported experiments support cautious statements that:
 - A classical coordinate-and-phase classifier was implemented and tested on multiple synthetic dataset families.
@@ -106,7 +106,7 @@ The reported experiments support cautious statements that:
 - The corrected Phase 7 evidence does not establish a reliable practical gain over always-coherent phases.
 - Q-CIS did not demonstrate consistent superiority over conventional RBF, SVM, or MLP baselines.
 
-## 22. What the evidence does not support
+## 8. What the evidence does not support
 
 Do not claim:
 - Quantum advantage or physical quantum computation.
