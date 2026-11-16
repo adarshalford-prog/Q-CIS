@@ -1,8 +1,11 @@
-# Q-CIS — Complete public release dossier
+# Q-CIS — Complete public release dossier (archived source document)
 
-The full release dossier as a single document: original proposal, later classifier
-formulation, reported experimental history, consolidated interpretation, and the release
-checklist. The repository files are a split of this document.
+> **Archival note.** This file is the release dossier exactly as prepared, kept as the
+> provenance record for the repository. It retains the **original dossier section
+> numbering (0-26)**, which deliberately does not match the numbering of the curated
+> documents at the repository root and in `docs/`. Those curated documents are each
+> numbered independently from section 1. Nothing here has been renumbered or
+> rewritten, so that the source of every claim stays traceable.
 
 ---
 
