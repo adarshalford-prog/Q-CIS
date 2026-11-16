@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you refer to this work, please cite it using the metadata below."
+title: "Q-CIS — Quantum Coordinate Intelligence System"
+abstract: >-
+  A classical, quantum-inspired learning architecture based on coordinate-based state
+  evolution, complex-valued amplitudes and phases, and interference-based decisions.
+  This is a partial public research release: documentation and author-reported findings only.
+  No quantum advantage or physical quantum computation is claimed.
+type: software
+authors:
+  - name: "Adarsh K. B."
+    email: "adarsh.alford@gmail.com"
+version: 0.1.0
+date-released: 2026-11-16
+license: MIT
+repository-code: "https://github.com/adarshalford-prog/Q-CIS"
+keywords:
+  - quantum-inspired machine learning
+  - prototype learning
+  - complex-valued models
+  - phase interference
+  - classical simulation
