@@ -1,0 +1,5 @@
+# Q-CIS reference implementation — runtime requirements
+numpy>=1.23
+
+# Development / test requirements
+pytest>=7.0

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qcis"
+version = "0.2.0"
+description = "Reference implementation of the published Q-CIS classical coordinate-and-phase classifier equations"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Adarsh K. B.", email = "adarsh.alford@gmail.com" }]
+dependencies = ["numpy>=1.23"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/adarshalford-prog/Q-CIS"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["qcis*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
